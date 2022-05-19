@@ -1,0 +1,112 @@
+body {
+  background-image: linear-gradient(
+    #fffe82,
+    #ffffff,
+    #c5edf9,
+    #ffffff,
+    #fffe82
+  );
+  font-family: 'DM Sans', sans-serif;
+  color: #02318d;
+}
+form {
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 8px 16px;
+  color: whitesmoke;
+  background-image: linear-gradient(to right, #00cdff, #0512d8, #00cdff);
+  border-radius: 5px;
+}
+/*
+.search-button {
+  color: whitesmoke;
+  background-image: linear-gradient(to right, #00cdff, #0512d8, #00cdff);
+  box-shadow: 0 4px 8px 0 rgba(0, 40, 120, 0.35);
+  border: 1px solid #0512d8;
+  border-radius: 20px;
+
+  padding: 5px 10px;
+  transition: all 100ms ease-in-out;
+}
+form.search-button:hover {
+  color: #0512d8;
+  background: rgb(245, 245, 245);
+  cursor: progress;
+}
+*/
+h1 {
+  font-size: 32px;
+  text-align: center;
+
+  padding: 5px;
+  color: #0512d8;
+  text-shadow: 4px 8px 16px rgba(0, 40, 120, 0.35);
+  border: 2px solid #0512d8;
+  border-radius: 20px;
+  background-color: rgba(245, 245, 245, 0.5);
+  box-shadow: 0 16px 32px 0 rgba(0, 40, 120, 0.35);
+}
+h2 {
+  font-size: 54px;
+  color: #0512d8;
+  text-shadow: 4px 8px 16px rgba(0, 40, 120, 0.35);
+}
+h2 .degree {
+  font-size: 18px;
+  position: relative;
+  top: -26px;
+}
+
+table {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.centralBlock {
+  width: 180px;
+}
+.mainTemperature {
+  border: 2px solid #0512d8;
+  border-radius: 30px;
+  background-color: rgba(245, 245, 245, 0.5);
+  box-shadow: 0 16px 32px 0 rgba(0, 40, 120, 0.35);
+}
+.leftSide .rightSide {
+  width: 180px;
+}
+.leftSide {
+  font-size: x-large;
+}
+.downTable {
+  border: none;
+  border-spacing: 10px;
+  padding: 10px;
+}
+
+td {
+  text-align: center;
+  width: auto;
+  padding: 15px 10px;
+}
+.weather {
+  border: 2px solid #0512d8;
+  border-radius: 20px;
+  background-color: rgba(245, 245, 245, 0.5);
+  box-shadow: 0 16px 32px 0 rgba(0, 40, 120, 0.35);
+}
+.temperature {
+  color: #0512d8;
+  text-shadow: 4px 8px 16px rgba(0, 40, 120, 0.35);
+}
+
+.day {
+  color: whitesmoke;
+  background-image: linear-gradient(to right, #00cdff, #0512d8, #00cdff);
+  border-radius: 5px;
+}
