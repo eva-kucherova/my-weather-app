@@ -63,12 +63,10 @@ function search(event) {
 
   function showTemperature(response) {
     console.log(response.data);
-    console.log(response.data.main.temp);
-    let temperature = Math.round(response.data.main.temp);
-    console.log(temperature);
+
     celsiusTemperature = Math.round(response.data.main.temp);
     let tempElement = document.querySelector('#main-degrees');
-    tempElement.innerHTML = temperature;
+    tempElement.innerHTML = celsiusTemperature;
 
     let iconElement = document.querySelector('#current-icon');
     console.log(iconElement);
@@ -135,10 +133,9 @@ function showWeather(event) {
       console.log(currentCity);
       let h1 = document.querySelector('h1');
       h1.innerHTML = `You are in ${currentCity} now`;
-      let temperature = Math.round(response.data.main.temp);
-      console.log(temperature);
+      celsiusTemperature = Math.round(response.data.main.temp);
       let tempElement = document.querySelector('#main-degrees');
-      tempElement.innerHTML = temperature;
+      tempElement.innerHTML = celsiusTemperature;
 
       let iconElement = document.querySelector('#current-icon');
       console.log(iconElement);
