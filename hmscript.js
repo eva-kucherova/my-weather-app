@@ -106,7 +106,6 @@ function convertToFarengheit(event) {
   event.preventDefault();
   let mainTemp = document.querySelector('#main-degrees');
   mainTemp.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
-  console.log(temperatureElement);
 }
 
 function convertToCelsus(event) {
@@ -122,7 +121,6 @@ let celsusLink = document.querySelector('#celsus');
 celsusLink.addEventListener('click', convertToCelsus);
 
 function showWeather(event) {
-  console.log('Hello');
   function showPosition(position) {
     console.log(position);
     let lat = position.coords.latitude;
@@ -133,8 +131,6 @@ function showWeather(event) {
 
     function showTemperature(response) {
       console.log(response);
-      let currentTemp = Math.round(response.data.main.temp);
-      console.log(currentTemp);
       let currentCity = response.data.name;
       console.log(currentCity);
       let h1 = document.querySelector('h1');
