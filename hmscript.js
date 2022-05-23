@@ -121,6 +121,14 @@ function showWeather(event) {
       let tempElement = document.querySelector('#main-degrees');
       tempElement.innerHTML = temperature;
 
+      let iconElement = document.querySelector('#current-icon');
+      console.log(iconElement);
+      let icon = response.data.weather[0].icon;
+      iconElement.setAttribute(
+        'src',
+        `http://openweathermap.org/img/wn/${icon}@2x.png`
+      );
+
       let humidity = Math.round(response.data.main.humidity);
       console.log(humidity);
       let wind = Math.round(response.data.wind.speed);
