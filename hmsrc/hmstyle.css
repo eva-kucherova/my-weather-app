@@ -67,6 +67,15 @@ h2 .degree {
   position: relative;
   top: -26px;
 }
+.units {
+  text-decoration: none;
+}
+.units:hover {
+  color: red;
+  cursor: default;
+  font-size: x-large;
+}
+
 h3 {
   font-size: 18px;
 }
