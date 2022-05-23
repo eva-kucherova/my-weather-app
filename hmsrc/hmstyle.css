@@ -67,7 +67,9 @@ h2 .degree {
   position: relative;
   top: -26px;
 }
-
+h3 {
+  font-size: 18px;
+}
 table {
   width: 100%;
   margin: 0 auto;
