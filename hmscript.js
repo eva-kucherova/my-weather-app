@@ -69,6 +69,14 @@ function search(event) {
     let tempElement = document.querySelector('#main-degrees');
     tempElement.innerHTML = temperature;
 
+    let iconElement = document.querySelector('#current-icon');
+    console.log(iconElement);
+    let icon = response.data.weather[0].icon;
+    iconElement.setAttribute(
+      'src',
+      `http://openweathermap.org/img/wn/${icon}@2x.png`
+    );
+
     let description = response.data.weather[0].main;
     console.log(description);
     let descriptionElement = document.querySelector('#current-description');
