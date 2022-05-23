@@ -69,6 +69,11 @@ function search(event) {
     let tempElement = document.querySelector('#main-degrees');
     tempElement.innerHTML = temperature;
 
+    let description = response.data.weather[0].main;
+    console.log(description);
+    let descriptionElement = document.querySelector('#current-description');
+    descriptionElement.innerHTML = description;
+
     let humidity = Math.round(response.data.main.humidity);
     console.log(humidity);
     let wind = Math.round(response.data.wind.speed);
