@@ -66,6 +66,7 @@ function search(event) {
     console.log(response.data.main.temp);
     let temperature = Math.round(response.data.main.temp);
     console.log(temperature);
+    celsiusTemperature = Math.round(response.data.main.temp);
     let tempElement = document.querySelector('#main-degrees');
     tempElement.innerHTML = temperature;
 
@@ -95,8 +96,30 @@ function search(event) {
 
   axios.get(apiUrl).then(showTemperature);
 }
+
+let celsiusTemperature = null;
+
 let searchForm = document.querySelector('#search-form');
 searchForm.addEventListener('submit', search);
+
+function convertToFarengheit(event) {
+  event.preventDefault();
+  let mainTemp = document.querySelector('#main-degrees');
+  mainTemp.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+  console.log(temperatureElement);
+}
+
+function convertToCelsus(event) {
+  event.preventDefault();
+  let mainTemp = document.querySelector('#main-degrees');
+  mainTemp.innerHTML = celsiusTemperature;
+}
+
+let farengheitLink = document.querySelector('#farengheit');
+farengheitLink.addEventListener('click', convertToFarengheit);
+
+let celsusLink = document.querySelector('#celsus');
+celsusLink.addEventListener('click', convertToCelsus);
 
 function showWeather(event) {
   console.log('Hello');
@@ -147,24 +170,3 @@ function showWeather(event) {
 
 let currentButton = document.querySelector('#current-button');
 currentButton.addEventListener('click', showWeather);
-
-/*
-function convertToFarengheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector('#main-degrees');
-  temperatureElement.innerHTML = 66;
-  console.log(temperatureElement);
-}
-
-function convertToCelsus(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector('#main-degrees');
-  temperatureElement.innerHTML = 19;
-}
-
-let farengheitLink = document.querySelector('#farengheit');
-farengheitLink.addEventListener('click', convertToFarengheit);
-
-let celsusLink = document.querySelector('#celsus');
-celsusLink.addEventListener('click', convertToCelsus);
-*/
