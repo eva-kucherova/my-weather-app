@@ -26,7 +26,7 @@ button {
 button:hover {
   background: #0512d8;
   color: whitesmoke;
-  cursor: progress;
+  cursor: pointer;
 }
 /*
 .search-button {
