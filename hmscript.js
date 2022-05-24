@@ -49,6 +49,15 @@ if (minutes < 10) minutes = `0${minutes}`;
 let mainTime = document.querySelector('#now-time');
 mainTime.innerHTML = `${hour} : ${minutes}`;
 
+function celsusAccent() {
+  let farengheitUnit = document.querySelector('#farengheit');
+  farengheitUnit.style.fontSize = 10 + 'px';
+  farengheitUnit.style.color = '#00cdff';
+  let celsusUnit = document.querySelector('#celsus');
+  celsusUnit.style.fontSize = 30 + 'px';
+  celsusUnit.style.color = '#0512d8';
+}
+
 function search(event) {
   event.preventDefault();
   let cityElement = document.querySelector('h1');
@@ -67,7 +76,7 @@ function search(event) {
     celsiusTemperature = Math.round(response.data.main.temp);
     let tempElement = document.querySelector('#main-degrees');
     tempElement.innerHTML = celsiusTemperature;
-
+    celsusAccent();
     let iconElement = document.querySelector('#current-icon');
     console.log(iconElement);
     let icon = response.data.weather[0].icon;
@@ -117,12 +126,7 @@ function convertToCelsus(event) {
   event.preventDefault();
   let mainTemp = document.querySelector('#main-degrees');
   mainTemp.innerHTML = celsiusTemperature;
-  let farengheitUnit = document.querySelector('#farengheit');
-  farengheitUnit.style.fontSize = 10 + 'px';
-  farengheitUnit.style.color = '#00cdff';
-  let celsusUnit = document.querySelector('#celsus');
-  celsusUnit.style.fontSize = 30 + 'px';
-  celsusUnit.style.color = '#0512d8';
+  celsusAccent();
 }
 
 let farengheitLink = document.querySelector('#farengheit');
@@ -149,7 +153,7 @@ function showWeather(event) {
       celsiusTemperature = Math.round(response.data.main.temp);
       let tempElement = document.querySelector('#main-degrees');
       tempElement.innerHTML = celsiusTemperature;
-
+      celsusAccent();
       let iconElement = document.querySelector('#current-icon');
       console.log(iconElement);
       let icon = response.data.weather[0].icon;
