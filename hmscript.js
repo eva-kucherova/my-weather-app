@@ -104,12 +104,25 @@ function convertToFarengheit(event) {
   event.preventDefault();
   let mainTemp = document.querySelector('#main-degrees');
   mainTemp.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+
+  let farengheitUnit = document.querySelector('#farengheit');
+  farengheitUnit.style.fontSize = 30 + 'px';
+  farengheitUnit.style.color = '#0512d8';
+  let celsusUnit = document.querySelector('#celsus');
+  celsusUnit.style.fontSize = 10 + 'px';
+  celsusUnit.style.color = '#00cdff';
 }
 
 function convertToCelsus(event) {
   event.preventDefault();
   let mainTemp = document.querySelector('#main-degrees');
   mainTemp.innerHTML = celsiusTemperature;
+  let farengheitUnit = document.querySelector('#farengheit');
+  farengheitUnit.style.fontSize = 10 + 'px';
+  farengheitUnit.style.color = '#00cdff';
+  let celsusUnit = document.querySelector('#celsus');
+  celsusUnit.style.fontSize = 30 + 'px';
+  celsusUnit.style.color = '#0512d8';
 }
 
 let farengheitLink = document.querySelector('#farengheit');
