@@ -58,6 +58,39 @@ function celsusAccent() {
   celsusUnit.style.color = '#0512d8';
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+  return days[day];
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = 'e75845b1b358b448cb604a8d108e8ed3';
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+}
+function showForecast(response) {
+  console.log(response.data.daily);
+
+  let forecastDayElement = document.querySelector('#forecast-day');
+  let forecastDay = response.data.daily[1].dt;
+  forecastDayElement.innerHTML = formatDay(forecastDay);
+  let forecastTempElement = document.querySelector('#forecast-degree');
+  forecastTempElement.innerHTML = response.data.daily[1].temp.day;
+  let forecastWetElement = document.querySelector('#forecast-humidity');
+  forecastWetElement.innerHTML = response.data.daily[1].humidity;
+  let forecastIcon = response.data.daily[1].weather[0].icon;
+  console.log(icon);
+  let forecastIconElement = document.querySelector('#forecast-icon');
+  forecastIconElement.setAttribute(
+    'src',
+    `https://openweathermap.org/img/wn/${icon}@2x.png`
+  );
+}
+
 function search(event) {
   event.preventDefault();
   let cityElement = document.querySelector('h1');
@@ -77,6 +110,10 @@ function search(event) {
     let tempElement = document.querySelector('#main-degrees');
     tempElement.innerHTML = celsiusTemperature;
     celsusAccent();
+    let lat = response.data.coord.lat;
+    let lon = response.data.coord.lon;
+    console.log(lat);
+    console.log(lon);
     let iconElement = document.querySelector('#current-icon');
     console.log(iconElement);
     let icon = response.data.weather[0].icon;
@@ -99,6 +136,8 @@ function search(event) {
     wetElement.innerHTML = humidity;
     let windElement = document.querySelector('#current-wind');
     windElement.innerHTML = wind;
+    getForecast(response.data.coord);
+    showForecast(response);
   }
 
   axios.get(apiUrl).then(showTemperature);
