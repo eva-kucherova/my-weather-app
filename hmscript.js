@@ -79,7 +79,7 @@ function showForecast(response) {
   let forecastDay = response.data.daily[1].dt;
   forecastDayElement.innerHTML = formatDay(forecastDay);
   let forecastTempElement = document.querySelector('#forecast-degree');
-  forecastTempElement.innerHTML = response.data.daily[1].temp.day;
+  forecastTempElement.innerHTML = Math.round(response.data.daily[1].temp.day);
   let forecastWetElement = document.querySelector('#forecast-humidity');
   forecastWetElement.innerHTML = response.data.daily[1].humidity;
   let forecastIcon = response.data.daily[1].weather[0].icon;
