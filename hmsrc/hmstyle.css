@@ -12,13 +12,13 @@ body {
 form {
   text-align: center;
   padding-top: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 button {
   display: block;
   font-size: 14px;
   margin: 0 auto;
-  padding: 8px 54px;
+  padding: 4px 54px;
   color: whitesmoke;
   background-image: linear-gradient(to right, #00cdff, #0512d8, #00cdff);
   border-radius: 5px;
@@ -28,23 +28,7 @@ button:hover {
   color: whitesmoke;
   cursor: pointer;
 }
-/*
-.search-button {
-  color: whitesmoke;
-  background-image: linear-gradient(to right, #00cdff, #0512d8, #00cdff);
-  box-shadow: 0 4px 8px 0 rgba(0, 40, 120, 0.35);
-  border: 1px solid #0512d8;
-  border-radius: 20px;
 
-  padding: 5px 10px;
-  transition: all 100ms ease-in-out;
-}
-form.search-button:hover {
-  color: #0512d8;
-  background: rgb(245, 245, 245);
-  cursor: progress;
-}
-*/
 h1 {
   font-size: 28px;
   text-align: center;
