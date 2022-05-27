@@ -114,7 +114,13 @@ td {
 .weather {
   border: 2px solid #0512d8;
   border-radius: 20px;
-  background-color: rgba(245, 245, 245, 0.5);
+  background-image: linear-gradient(
+    #fffe82,
+    #ffffff,
+    #c5edf9,
+    #ffffff,
+    #fffe82
+  );
   box-shadow: 0 16px 32px 0 rgba(0, 40, 120, 0.35);
 }
 .temperature {
