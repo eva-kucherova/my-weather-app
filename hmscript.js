@@ -72,23 +72,31 @@ function getForecast(coordinates) {
   console.log(apiUrl);
   axios.get(apiUrl).then(showForecast);
 }
+
 function showForecast(response) {
   console.log(response.data.daily);
-
-  let forecastDayElement = document.querySelector('#forecast-day');
-  let forecastDay = response.data.daily[1].dt;
-  forecastDayElement.innerHTML = formatDay(forecastDay);
-  let forecastTempElement = document.querySelector('#forecast-degree');
-  forecastTempElement.innerHTML = Math.round(response.data.daily[1].temp.day);
-  let forecastWetElement = document.querySelector('#forecast-humidity');
-  forecastWetElement.innerHTML = response.data.daily[1].humidity;
-  let forecastIcon = response.data.daily[1].weather[0].icon;
-  console.log(icon);
-  let forecastIconElement = document.querySelector('#forecast-icon');
-  forecastIconElement.setAttribute(
-    'src',
-    `https://openweathermap.org/img/wn/${icon}@2x.png`
-  );
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector('#forecast');
+  let forecastHTML = `<tr>`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 7) {
+      forecastHTML += `<td class="weather">
+      <div class="day" id="forecast-day">${formatDay(forecastDay.dt)}</div>
+     <br/>
+     <div><img id="forecast-icon" src="https://openweathermap.org/img/wn/${
+       forecastDay.weather[0].icon
+     }@2x.png" alt="" width="32" ></div>
+     <div class="temperature"> <span id="forecast-degree">${
+       forecastDay.temp.day
+     }</span> °C </div>
+     <div class="wet">💧<span id="forecast-humidity">${
+       forecastDay.humidity
+     }</span>% </div>
+   </td>`;
+    }
+  });
+  forecastHTML += `</tr>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function search(event) {
