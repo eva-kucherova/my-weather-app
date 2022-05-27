@@ -222,6 +222,8 @@ function showWeather(event) {
       wetElement.innerHTML = humidity;
       let windElement = document.querySelector('#current-wind');
       windElement.innerHTML = wind;
+      getForecast(response.data.coord);
+      showForecast(response);
     }
     axios.get(apiUrl).then(showTemperature);
   }
