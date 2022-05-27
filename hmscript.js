@@ -86,9 +86,9 @@ function showForecast(response) {
      <div><img id="forecast-icon" src="https://openweathermap.org/img/wn/${
        forecastDay.weather[0].icon
      }@2x.png" alt="" width="32" ></div>
-     <div class="temperature"> <span id="forecast-degree">${
+     <div class="temperature"> <span id="forecast-degree">${Math.round(
        forecastDay.temp.day
-     }</span> °C </div>
+     )}</span> °C </div>
      <div class="wet">💧<span id="forecast-humidity">${
        forecastDay.humidity
      }</span>% </div>
